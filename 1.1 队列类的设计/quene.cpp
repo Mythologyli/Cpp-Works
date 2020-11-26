@@ -98,11 +98,13 @@ Quene::~Quene(void) //析构函数，用于释放分配的空间
 {
 	//从头开始，删除整个链表的空间
 	
-	Node* p = front;
+	Node* p1 = front;
+	Node* p2 = nullptr;
 
-	if (!p)
+	if (p1)
 	{
-		delete p;
-		p = p->next;
+		p2 = p1->next;
+		delete p1;
+		p1 = p2;
 	}
 }
