@@ -6,6 +6,14 @@ quene.cpp
 #include "quene.h"
 
 
+Quene::Quene(void) //构造函数，用于初始化变量
+{
+	front = nullptr; //队列头指针
+	end = nullptr; //队列尾指针
+	current_length = 0; //当前队列长度
+}
+
+
 int Quene::CurrentLength(void) //返回当前队列长度
 {
 	return current_length;
@@ -83,4 +91,11 @@ int Quene::EndMember(void) //返回队尾元素。若队列已空，返回0。�
 		return 0;
 
 	return end->member;
+}
+
+
+Quene::~Quene(void) //析构函数，用于释放分配的空间
+{
+	delete(front);
+	delete(end);
 }
