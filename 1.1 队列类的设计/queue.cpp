@@ -1,12 +1,12 @@
 ﻿/*
-quene.cpp
+queue.cpp
 */
 
 
-#include "quene.h"
+#include "queue.h"
 
 
-Quene::Quene(void) //构造函数，用于初始化变量
+Queue::Queue(void) //构造函数，用于初始化变量
 {
 	front = nullptr; //队列头指针
 	end = nullptr; //队列尾指针
@@ -14,13 +14,13 @@ Quene::Quene(void) //构造函数，用于初始化变量
 }
 
 
-int Quene::CurrentLength(void) //返回当前队列长度
+int Queue::CurrentLength(void) //返回当前队列长度
 {
 	return current_length;
 }
 
 
-bool Quene::IsFull(void) //判断队列是否已满
+bool Queue::IsFull(void) //判断队列是否已满
 {
 	if (current_length == MAX_LENGTH)
 		return true;
@@ -28,7 +28,7 @@ bool Quene::IsFull(void) //判断队列是否已满
 }
 
 
-bool Quene::IsEmpty(void) //判断队列是否为空
+bool Queue::IsEmpty(void) //判断队列是否为空
 {
 	if (current_length == 0)
 		return true;
@@ -36,7 +36,7 @@ bool Quene::IsEmpty(void) //判断队列是否为空
 }
 
 
-int Quene::In(int num) //入队。若入队前队列已满，返回0
+int Queue::In(int num) //入队。若入队前队列已满，返回0
 {
 	if (current_length == MAX_LENGTH) //队列已满，返回0
 		return 0;
@@ -61,7 +61,7 @@ int Quene::In(int num) //入队。若入队前队列已满，返回0
 }
 
 
-int Quene::Out(void) //出队。若出队前队列已空，返回0
+int Queue::Out(void) //出队。若出队前队列已空，返回0
 {
 	if (current_length == 0) //队列已空，返回0
 		return 0;
@@ -76,7 +76,7 @@ int Quene::Out(void) //出队。若出队前队列已空，返回0
 }
 
 
-int Quene::FrontMember(void) //返回队首元素。若队列已空，返回0。请结合 IsEmpty 函数使用
+int Queue::FrontMember(void) //返回队首元素。若队列已空，返回0。请结合 IsEmpty 函数使用
 {
 	if (current_length == 0) //队列已空，返回0
 		return 0;
@@ -85,7 +85,7 @@ int Quene::FrontMember(void) //返回队首元素。若队列已空，返回0。
 }
 
 
-int Quene::EndMember(void) //返回队尾元素。若队列已空，返回0。请结合 IsEmpty 函数使用
+int Queue::EndMember(void) //返回队尾元素。若队列已空，返回0。请结合 IsEmpty 函数使用
 {
 	if (current_length == 0) //队列已空，返回0
 		return 0;
@@ -94,7 +94,7 @@ int Quene::EndMember(void) //返回队尾元素。若队列已空，返回0。�
 }
 
 
-Quene::~Quene(void) //析构函数，用于释放分配的空间
+Queue::~Queue(void) //析构函数，用于释放分配的空间
 {
 	//从头开始，删除整个链表的空间
 	

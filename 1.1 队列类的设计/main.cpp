@@ -6,7 +6,7 @@
 
 #include <iostream>
 
-#include "quene.h"
+#include "queue.h"
 
 
 using namespace std;
@@ -19,7 +19,7 @@ int main()
 	cout << "队列的最大长度为 10" << endl;
 	cout << "作者：Peisheng Li  日期：2020/11/25" << endl;
 
-	Quene quene;
+	Queue queue;
 	int menu_choice; //存放菜单选项
 
 	do
@@ -44,7 +44,7 @@ int main()
 			int num;
 			cin >> num;
 
-			if (!quene.In(num))
+			if (!queue.In(num))
 				cout << "入队失败！队列已满" << endl;
 			else cout << "入队成功！" << endl;
 		} 
@@ -52,7 +52,7 @@ int main()
 
 		case 2: //出队
 		{
-			if (!quene.Out())
+			if (!queue.Out())
 				cout << "出队失败！队列已空" << endl;
 			else cout << "出队成功！" << endl;
 		}
@@ -60,23 +60,23 @@ int main()
 
 		case 3: //返回队首元素
 		{
-			if (quene.IsEmpty())
+			if (queue.IsEmpty())
 				cout << "返回队首元素失败！队列已空" << endl;
-			else cout << "队首元素为：" << quene.FrontMember() << endl;
+			else cout << "队首元素为：" << queue.FrontMember() << endl;
 		}
 		break;
 
 		case 4: //返回队尾元素
 		{
-			if (quene.IsEmpty())
+			if (queue.IsEmpty())
 				cout << "返回队尾元素失败！队列已空" << endl;
-			else cout << "队尾元素为：" << quene.EndMember() << endl;
+			else cout << "队尾元素为：" << queue.EndMember() << endl;
 		}
 		break;
 
 		case 5: //判断队列是否为空
 		{
-			if (quene.IsEmpty())
+			if (queue.IsEmpty())
 				cout << "队列为空" << endl;
 			else cout << "队列非空" << endl;
 		}
@@ -84,7 +84,7 @@ int main()
 
 		case 6: //返回当前队列长度
 		{
-			cout << "当前队列长度为：" << quene.CurrentLength() << endl;
+			cout << "当前队列长度为：" << queue.CurrentLength() << endl;
 		}
 		}
 	} while (menu_choice);
