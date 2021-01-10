@@ -83,7 +83,7 @@ public:
 int main()
 {
 	cout << "本程序用于多继承的练习" << endl;
-	cout << "作者：Peisheng Li  日期：2021/01/01" << endl;
+	cout << "作者：Peisheng Li  日期：2021/01/10" << endl;
 	
 	Math_student student_a("Mike", "ODE", "Liouville_theorem");
 	student_a.Person::all_info();
